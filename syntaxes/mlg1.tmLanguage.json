@@ -1,0 +1,108 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "mlg1",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#meta-variables"
+		},
+		{
+			"include": "#file-load"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#reserved-words"
+		},
+		{
+			"include": "#builtin-function-call"
+		},
+		{
+			"include": "#function-call"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#string"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.double-slash.mlg1",
+				"match": "//.*$"
+			}]
+		},
+		"meta-variables": {
+			"patterns": [{
+				"name": "keyword.control.mlg1",
+				"match": "#(width|height|tickrate|memory)"
+			}]
+		},
+		"file-load": {
+			"patterns": [{
+				"name": "keyword.control.mlg1",
+				"match": "\\$[a-zA-Z_][a-zA-Z0-9_]*"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.mlg1",
+				"match": "[+\\-*/%=<>!]+"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.mlg1",
+				"match": "\\b(if|else|while|return|break|continue|for)\\b"
+			},
+			{
+				"name": "storage.type.function.mlg1",
+				"match": "\\b(fn|define|include|global|let)\\b"
+			}]
+		},
+		"reserved-words": {
+			"patterns": [{
+				"name": "keyword.reserved.mlg1",
+				"match": "\\b(CONTROL1|CONTROL2|A|B|UP|DOWN|LEFT|RIGHT|MEMORY|WIDTH|HEIGHT|TICKRATE|DELTA)\\b"
+			}]
+		},
+		"builtin-function-call": {
+			"patterns": [{
+				"name": "keyword.reserved.mlg1",
+				"match": "\\b(color|point|line|rect|get|set|print|getpixel|setch)\\s*(?=\\()"
+			}]
+		},
+		"function-call": {
+			"patterns": [{
+				"name": "entity.name.function.mlg1",
+				"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+			}]
+		},
+		"number": {
+			"patterns": [{
+				"name": "constant.numeric.mlg1",
+				"match": "\\b\\d+(\\.\\d+)?\\b"
+			}]
+		},
+		"string": {
+			"name": "string.quoted.double.mlg1",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mlg1",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.mlg1"
+}

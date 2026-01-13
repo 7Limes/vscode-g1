@@ -1,0 +1,40 @@
+{
+  "name": "g1",
+  "displayName": "g1",
+  "description": "g1 and mlg1 syntax highlighting support.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "g1",
+        "aliases": ["g1"],
+        "extensions": [".g1"],
+        "configuration": "./config/g1-language-configuration.json"
+      },
+      {
+        "id": "mlg1",
+        "aliases": ["mlg1"],
+        "extensions": [".mlg1"],
+        "configuration": "./config/mlg1-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "g1",
+        "scopeName": "source.g1",
+        "path": "./syntaxes/g1.tmLanguage.json"
+      },
+      {
+        "language": "mlg1",
+        "scopeName": "source.mlg1",
+        "path": "./syntaxes/mlg1.tmLanguage.json"
+      } 
+    ]
+  }
+}

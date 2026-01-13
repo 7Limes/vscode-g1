@@ -1,0 +1,105 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "g1",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#meta-variables"
+		},
+		{
+			"include": "#data-addresses"
+		},
+		{
+			"include": "#data-operations"
+		},
+		{
+			"include": "#data-strings"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#instructions"
+		},
+		{
+			"include": "#addresses"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#names"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.double-slash.g1",
+				"match": ";.*$"
+			}]
+		},
+		"meta-variables": {
+			"patterns": [{
+				"name": "keyword.control.g1",
+				"match": "#(width|height|tickrate|memory)"
+			}]
+		},
+		"data-addresses": {
+			"patterns": [{
+				"name": "storage.type.g1",
+				"match": "@\\d+"
+			}]
+		},
+		"data-operations": {
+			"patterns": [{
+				"name": "keyword.control.g1",
+				"match": "file|bytes|string|raw|pack|img"
+			}]
+		},
+		"data-strings": {
+			"name": "string.quoted.double.g1",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mlg1",
+					"match": "\\\\."
+				}
+			]
+		},
+		"labels": {
+			"patterns": [{
+				"name": "entity.name.function.g1",
+				"match": "[A-z0-9_]+:"
+			}]
+		},
+		"instructions": {
+			"patterns": [{
+				"name": "keyword.operator.word.g1",
+				"match": "(movp|mov|add|sub|mul|div|mod|less|equal|not|jmp|color|point|line|rect|log|getp)\\b"
+			}]
+		},
+		"addresses": {
+			"patterns": [{
+				"name": "variable.parameter.g1",
+				"match": "\\$\\d+"
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric.g1",
+				"match": "\\b\\d+(\\.\\d+)?\\b"
+			}]
+		},
+		"names": {
+			"patterns": [{
+				"name": "entity.name.function.g1",
+				"match": "\\b[A-z_][A-z0-9_]*\\b"
+			}]
+		}
+		
+	},
+	"scopeName": "source.g1"
+}
