@@ -12,9 +12,6 @@
 			"include": "#data-addresses"
 		},
 		{
-			"include": "#data-operations"
-		},
-		{
 			"include": "#data-strings"
 		},
 		{
@@ -50,12 +47,6 @@
 			"patterns": [{
 				"name": "storage.type.g1",
 				"match": "@\\d+"
-			}]
-		},
-		"data-operations": {
-			"patterns": [{
-				"name": "keyword.control.g1",
-				"match": "file|bytes|string|raw|pack|img"
 			}]
 		},
 		"data-strings": {
